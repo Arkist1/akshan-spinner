@@ -1,10 +1,11 @@
-import numpy
 import pywinauto
 import pyautogui
 import win32gui
-import inspect
-import time
 import asyncio
+import dotenv
+import os
+
+dotenv.load_dotenv()
 
 
 LEAGUE_WINDOW_STR = "League of Legends (TM) Client"

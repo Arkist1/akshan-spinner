@@ -1,6 +1,11 @@
 import discord
 from threading import Thread
 from utils import await_buster
+import dotenv
+import os
+
+dotenv.load_dotenv()
+
 
 intents = discord.Intents(messages=True, guilds=True, message_content=True)
 client = discord.Client(intents=intents)
@@ -21,5 +26,4 @@ async def on_message(msg):
             await msg.reply(user_msg)
 
 
-TOKEN = "MTE3OTcwNTA4NjI4OTY0OTcwNA.GvredA.BI4i4MrwHGk2J_3FmeIxsmgQZ2TO0UfeCfcGk8"
-client.run(TOKEN)
+client.run(os.environ["TOKEN"])
